@@ -69,8 +69,19 @@ class CreateMessageRequest extends ApiRequest
         return User::query()->where('username', $this->input('to'))->first();
     }
 
+    /**
+     * @return array|null|string
+     */
     public function getMessage()
     {
         return $this->input('message');
+    }
+
+    /**
+     * @return array|null|string
+     */
+    public function withEmail()
+    {
+        return $this->input('email', false);
     }
 }

@@ -8,6 +8,8 @@
 
 namespace App\Services;
 
+use App\Components\Messengers\DefaultMessenger;
+use App\Components\Messengers\EmailMessengerDecorator;
 use App\Http\Requests\CreateMessageRequest;
 use App\Http\Requests\GetMessagesFromUserRequest;
 use App\Message;
@@ -22,11 +24,13 @@ class MessageService implements MessageServiceInterface
      */
    public function createMessage(CreateMessageRequest $request) : string
    {
-       $message = new Message();
-       $message->sender_id = $request->getSender()->getId();
-       $message->receiver_id = $request->getReceiver()->getId();
-       $message->message = $request->getMessage();
-       $message->save();
+       $messenger = new DefaultMessenger();
+
+       if ($request->withEmail()) {
+           $messenger = new EmailMessengerDecorator($messenger);
+       }
+
+       $messenger->sendMessage($request);
 
        return 'Собщение успешно добавлено!';
    }

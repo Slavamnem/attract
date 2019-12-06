@@ -67,6 +67,6 @@ class User extends Authenticatable
      */
     public function getEmail() : string
     {
-        return $this->username;
+        return $this->email;
     }
 }

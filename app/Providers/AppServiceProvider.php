@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Components\EmailDrivers\DefaultEmailDriver;
+use App\Components\EmailDrivers\EmailDriverInterface;
 use App\Services\Interfaces\MessageServiceInterface;
 use App\Services\Interfaces\UserServiceInterface;
 use App\Services\MessageService;
@@ -19,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(UserServiceInterface::class, UserService::class);
         $this->app->bind(MessageServiceInterface::class, MessageService::class);
+        $this->app->bind(EmailDriverInterface::class, DefaultEmailDriver::class);
     }
 
     /**

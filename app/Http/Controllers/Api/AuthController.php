@@ -14,15 +14,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\OauthRequest;
 use App\Http\Requests\RegistrationRequest;
 use App\Services\Interfaces\UserServiceInterface;
-use App\Strategies\Interfaces\OauthGrantTypeStrategyInterface;
 use App\Strategies\Interfaces\StrategyInterface;
 use App\Strategies\OauthGrantType\OauthGrantTypeStrategy;
 use App\Traits\ValidationTrait;
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
