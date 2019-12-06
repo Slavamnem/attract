@@ -18,10 +18,10 @@ Route::group(['prefix' => 'v1'], function(){
     Route::post('oauth/token', 'Api\AuthController@oauth')->middleware('basic-auth');
 
     Route::group(['middleware' => ['oauth'], 'namespace' => 'Api'], function() {
-        Route::get('users-list', 'UserController@getUsers');
+        Route::get('users', 'UserController@getUsers');
         Route::group(['prefix' => 'messages'], function() {
             Route::post('', 'MessengerController@store');
-            Route::get('list', 'MessengerController@getMessagesFromUser');
+            Route::get('', 'MessengerController@getMessagesFromUser');
         });
     });
 });

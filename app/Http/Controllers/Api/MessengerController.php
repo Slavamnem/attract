@@ -12,6 +12,7 @@ use App\Helpers\ResponseHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateMessageRequest;
 use App\Http\Requests\GetMessagesFromUserRequest;
+use App\Http\Resources\MessageResource;
 use App\Services\Interfaces\MessageServiceInterface;
 use App\Traits\ValidationTrait;
 use Illuminate\Http\Request;
@@ -63,6 +64,6 @@ class MessengerController extends Controller
             return $this->getResponseWithErrors($request);
         }
 
-        return ResponseHelper::success($this->messageService->getMessagesFromUser($request));
+        return ResponseHelper::success(MessageResource::collection($this->messageService->getMessagesFromUser($request)));
     }
 }
