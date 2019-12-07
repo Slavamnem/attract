@@ -1,7 +1,7 @@
 <p align="center"><img src="https://attractgroup.com/wp-content/themes/zomer/assets/img/dsg/logo/logo_white.svg" width="400"></p>
 
 # Тестовое задание
-[Автор - Зелинский Вячеслав](https://laravel.com/docs/routing)
+[Автор - Зелинский Вячеслав](https://www.linkedin.com/in/%D0%B2%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2-%D0%B7%D0%B5%D0%BB%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9-b4863b181/)
 
 ## Запуск приложения
 
