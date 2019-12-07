@@ -46,8 +46,7 @@ class GetMessagesFromUserRequest extends ApiRequest
     {
         return [
             'required' => 'Поле :attribute обязательно к заполнению!',
-            'email' => 'Указан невалидый email!',
-            'max' => 'Превышен лимит длинны значения поля!',
+            'exists' => 'Отправитель не найден!',
         ];
     }
 

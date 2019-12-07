@@ -26,7 +26,7 @@ class CreateMessageRequest extends ApiRequest
     {
         return [
             'to' => 'required|max:255|exists:users,username|not_in:' . Auth::user()->getLogin(),
-            'message' => 'string|max:' . config('request.message-length-limit'),
+            'message' => 'required|string|max:' . config('request.message-length-limit'),
         ];
     }
 
@@ -49,7 +49,8 @@ class CreateMessageRequest extends ApiRequest
             'required' => 'Поле :attribute обязательно к заполнению!',
             'email' => 'Указан невалидый email!',
             'max' => 'Превышен лимит длинны значения поля!',
-            'not_in' => 'Отправлять сообщение самому себе довольно странно :)'
+            'not_in' => 'Отправлять сообщение самому себе довольно странно :)',
+            'exists' => 'Получатель не обнаружен!'
         ];
     }
 

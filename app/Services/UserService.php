@@ -46,6 +46,7 @@ class UserService implements UserServiceInterface
         ];
     }
 
+
     /**
      * @param User $user
      * @return array

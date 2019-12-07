@@ -22,8 +22,8 @@ class RegistrationRequest extends ApiRequest
     public function apiRules() : array
     {
         return [
-            'username' => 'required|max:50',
-            'email'    => 'email|required|max:255',
+            'username' => 'required|max:50|unique:users,username',
+            'email'    => 'email|required|max:255|unique:users,email',
             'password' => 'required|max:50',
         ];
     }
