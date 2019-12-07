@@ -45,4 +45,14 @@ class ResponseHelper
     {
         return response($message ?? Lang::get('responses.errors.unauthorized'))->setStatusCode($status);
     }
+
+    /**
+     * @param $message
+     * @param int $status
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public static function tokenExpired($message = null, $status = 401)
+    {
+        return response($message ?? Lang::get('responses.errors.token-expired'))->setStatusCode($status);
+    }
 }
