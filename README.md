@@ -11,4 +11,4 @@
 - Выполнить php artisan migrate
 
 
-## [Ссылка на Api документацию](https://web.postman.co/collections/7166797-2e0238a6-cf77-4a42-978b-81e10f69430c?version=latest&workspace=e2850aea-bdd9-4261-819a-06775accfa62)
+## [Ссылка на Api документацию](https://documenter.getpostman.com/view/7166797/SWE56eYL?version=latest)
